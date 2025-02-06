@@ -11,7 +11,8 @@
     "lint:fix": "eslint --fix .",
     "types:check": "tsc --pretty --noEmit",
     "prepare": "husky",
-    "build": "tsc"
+    "build": "tsc",
+    "start": "node server.ts"
   },
   "devDependencies": {
     "@eslint/eslintrc": "3.1.0",
