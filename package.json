@@ -1,0 +1,41 @@
+{
+  "name": "dfyn-point-backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon server.ts",
+    "format:check": "prettier --check .",
+    "format:write": "prettier --write .",
+    "lint:check": "eslint .",
+    "lint:fix": "eslint --fix .",
+    "types:check": "tsc --pretty --noEmit",
+    "prepare": "husky",
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "3.1.0",
+    "@eslint/js": "^9.3.0",
+    "@types/dotenv": "^8.2.0",
+    "@types/express": "^4.17.21",
+    "@types/http-errors": "^2.0.4",
+    "@types/node": "^20.12.13",
+    "eslint": "9.x",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-formatter-friendly": "7.0.0",
+    "globals": "^15.3.0",
+    "husky": "^9.0.11",
+    "nodemon": "^3.1.2",
+    "prettier": "^3.2.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5",
+    "typescript-eslint": "^7.11.0"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "ethers": "^6.13.0",
+    "express": "^4.19.2",
+    "http-errors": "^2.0.0",
+    "mongoose": "^8.4.0"
+  }
+}
