@@ -1,5 +1,5 @@
 {
-  "name": "dfyn-point-backend",
+  "name": "token-transfer",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
@@ -11,7 +11,8 @@
     "lint:fix": "eslint --fix .",
     "types:check": "tsc --pretty --noEmit",
     "prepare": "husky",
-    "build": "tsc"
+    "build": "tsc",
+    "start": "node dist/server.js"
   },
   "devDependencies": {
     "@eslint/eslintrc": "3.1.0",

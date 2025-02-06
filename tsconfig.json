@@ -12,6 +12,9 @@
     "forceConsistentCasingInFileNames": true,
     "strict": true
   },
-  "include": ["src/**/*"],
+  "include": [
+    "src/**/*",
+    "server.ts"   // Add your root-level server file here
+  ],
   "exclude": ["node_modules", "dist"]
 }
