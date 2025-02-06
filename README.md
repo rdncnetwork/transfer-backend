@@ -1,1 +1,1 @@
-# This Repo is for DFYN's Point system
+# This Repo is for token transfer
