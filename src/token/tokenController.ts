@@ -23,7 +23,7 @@ const tokenTransfer = async (
 			return createApiError(400, 'Invalid amount', next);
 		}
 
-		console.log('token transfer');
+		console.log('-------Token transfer started---------');
 		const txHash = await tokenTransferService(amount, recipient);
 		return createApiResponse(
 			{ txHash, message: 'Transaction Successful' },
@@ -36,10 +36,10 @@ const tokenTransfer = async (
 			return createApiError(400, error.reason, next);
 		}
 
-		if (error.info || error.shortMessage) {
+		if (error?.info || error?.shortMessage) {
 			return createApiError(
 				400,
-				error.info.message || error.shortMessage || 'Unknown error',
+				error?.info.message || error?.shortMessage || 'Unknown error',
 				next
 			);
 		}

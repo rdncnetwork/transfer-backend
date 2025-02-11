@@ -9,8 +9,6 @@ const tokenTransferService = async (amount: string, recipient: string) => {
 
 		if (!provider) throw new Error('No provider found');
 
-		// Check if contract address is valid
-
 		// Create a wallet instance
 		const wallet = new ethers.Wallet(config.privateKey, provider);
 
@@ -24,8 +22,19 @@ const tokenTransferService = async (amount: string, recipient: string) => {
 		const decimals = 18;
 		const parsedAmount = ethers.parseUnits(amount, decimals);
 
-		// Send the transaction
-		const tx = await contract.withdrawTokens(recipient, parsedAmount);
+		// Fetch the current nonce
+		const nonce = await wallet.getNonce();
+
+		console.log('Transaction : ', {
+			to: recipient,
+			nonce,
+			parsedAmount,
+		});
+
+		// Send the transaction with a manually set nonce
+		const tx = await contract.withdrawTokens(recipient, parsedAmount, {
+			nonce,
+		});
 
 		// Wait for transaction confirmation
 		await tx.wait(3);
